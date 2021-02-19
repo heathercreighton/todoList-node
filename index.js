@@ -10,7 +10,7 @@ const action = async () => {
                     type: "checkbox",
                     name: "action",
                     message: "Which action would you like to perform?",
-                    choices: ["Create a todo item", "Get all todo items", "Get todos sorted by ascending priority", "Get todos sorted by descending priority", "Get all completed todos", "Get all incomplete todos", "Get one todo", "Update a todo", "Delete a todo"],
+                    choices: ["Create a todo item", "Get all todo items", "Get todos sorted by ascending priority", "Get todos sorted by descending priority", "Get all completed todos", "Get all incomplete todos", "Get one todo", "Update a todo", "Delete a todo", "Exit app"],
                 }
     
             ]);
@@ -41,7 +41,10 @@ const action = async () => {
                 break
             case "Create a todo item":
                 await getDetails(idNum=null, "createOne");                     
-                break    
+                break;
+            case "Exit app":
+                console.log("Exiting app...")
+                process.exit(0)        
         }
     } catch (err) {
         return err;
